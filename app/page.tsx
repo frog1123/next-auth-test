@@ -9,8 +9,10 @@ export default async function Home() {
 
   return (
     <div>
-      <SignInButton />
-      <SignOutButton />
+      <div className='grid grid-flow-col gap-2 place-items-center p-2 w-max'>
+        <SignInButton />
+        <SignOutButton />
+      </div>
       <div>
         <p>user (server rendered)</p>
         <p>{JSON.stringify(session)}</p>
