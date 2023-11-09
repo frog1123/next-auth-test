@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, NextPage } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { NextAuthSessionProvider } from '@/components/providers/next-auth-session-provider';
@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   description: 'this a example of user auth with nextjs next-auth & prisma'
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+const RootLayout: NextPage<RootLayoutProps> = async ({ children }) => {
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className} dir='ltr'>
@@ -21,4 +25,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
