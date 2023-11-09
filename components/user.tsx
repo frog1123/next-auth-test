@@ -8,10 +8,8 @@ export const User: FC = () => {
 
   return (
     <div>
-      <p>
-        session
-        {JSON.stringify(session)}
-      </p>
+      <p>user (client rendered)</p>
+      <p>{JSON.stringify(session)}</p>
     </div>
   );
 };
