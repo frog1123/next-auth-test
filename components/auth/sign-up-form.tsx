@@ -51,9 +51,10 @@ export const SignUpForm: FC = () => {
   }, []);
 
   return (
-    <div className='bg-neutral-200 dark:bg-neutral-900 sm:rounded-md p-2'>
+    <div className='bg-neutral-200 dark:bg-neutral-900 sm:rounded-md p-4'>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
+          <p className='uppercase text-lg font-bold text-zinc-500 dark:text-white text-center'>Register</p>
           <FormField
             control={form.control}
             name='name'
@@ -112,7 +113,7 @@ export const SignUpForm: FC = () => {
                     }}
                   />
                 </FormControl>
-                <FormMessage>{emailMessage}</FormMessage>
+                <FormMessage>{emailMessage} </FormMessage>
               </FormItem>
             )}
           />
