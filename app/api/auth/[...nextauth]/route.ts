@@ -48,11 +48,10 @@ export const authOptions: NextAuthOptions = {
       console.log('jwt callback', { token, user });
       return token;
     }
+  },
+  pages: {
+    signIn: '/sign-in'
   }
-  // pages: {
-  //   signIn: '/sign-in',
-  //   signOut: '/sign-out'
-  // }
 };
 
 const handler = NextAuth(authOptions);

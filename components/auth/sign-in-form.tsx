@@ -9,6 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { LucideLoader } from 'lucide-react';
+import { signIn } from 'next-auth/react';
 
 const formSchema = z.object({
   name: z.string(),
@@ -37,8 +38,15 @@ export const SignInForm: FC = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.post('/api/auth/create-user', values);
-      router.push(`/`);
+      // const data = await axios.post('/api/auth/callback/credentials', {
+      //   name: 'asd',
+      //   password: 'asd'
+      // });
+
+      // console.log(data);
+
+      console.log('sign in test');
+      await signIn('credentials', { email: 'asd@asd.com', password: 'asd', redirect: true, callbackUrl: 'http://localhost:3000' }).then(error => console.log(error));
     } catch (err) {
       console.log('register error', err);
     }
@@ -149,9 +157,9 @@ export const SignInForm: FC = () => {
           />
           <div>
             <Button
-              disabled={isLoading || !(formValid.name && formValid.email && formValid.password)}
+              // disabled={isLoading || !(formValid.name && formValid.email && formValid.password)}
               className='bg-emerald-500 text-white hover:bg-emerald-800 transition w-[80px]'>
-              {isLoading ? <LucideLoader /> : <p>Register</p>}
+              {isLoading ? <LucideLoader /> : <p>Sign in</p>}
             </Button>
           </div>
         </form>
