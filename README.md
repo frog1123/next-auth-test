@@ -8,9 +8,11 @@ add env variables
 
 ```python
 # .env
+
+# nextauth secret
 NEXTAUTH_SECRET=
 
-# mysql
+# db url (mysql)
 DATABASE_URL=
 ```
 
