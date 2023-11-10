@@ -4,7 +4,7 @@ import { SignInButton } from '@/components/auth/sign-in';
 import { SignOutButton } from '@/components/auth/sign-out';
 import { SignUpButton } from '@/components/auth/sign-up';
 import { NextPage } from 'next';
-import { Lightbulb } from 'lucide-react';
+import { Github, Lightbulb } from 'lucide-react';
 import Link from 'next/link';
 
 const HomePage: NextPage = () => {
@@ -12,8 +12,12 @@ const HomePage: NextPage = () => {
     <div className='w-[50%] mx-auto p-2 mt-20'>
       <div className='grid place-items-center'>
         <p className='text-center'>nextjs website that handles user auth with next-auth library and prisma</p>
+
         <a href='https://github.com/frog1123/next-auth-test' className='text-blue-500 hover:text-blue-600'>
-          https://github.com/frog1123/next-auth-test
+          <div className='grid grid-cols-[max-content_auto] gap-1 place-items-center w-max'>
+            <Github className='w-4 h-4' />
+            <span>https://github.com/frog1123/next-auth-test</span>
+          </div>
         </a>
       </div>
       <div className='grid grid-flow-col gap-2 place-items-center p-2 w-max mx-auto'>
