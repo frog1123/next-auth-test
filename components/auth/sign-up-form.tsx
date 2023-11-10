@@ -9,6 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { LucideLoader } from 'lucide-react';
+import Link from 'next/link';
 
 const formSchema = z.object({
   name: z.string(),
@@ -155,6 +156,12 @@ export const SignUpForm: FC = () => {
               {isLoading ? <LucideLoader /> : <p>Register</p>}
             </Button>
           </div>
+          <p className='uppercase text-xs font-bold text-zinc-500 dark:text-white text-center'>
+            Have an account?{' '}
+            <Link href='/sign-in' className='text-blue-500 hover:text-blue-600 transition'>
+              Sign in
+            </Link>
+          </p>
         </form>
       </Form>
     </div>
