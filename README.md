@@ -27,4 +27,4 @@ run dev server
 
 go to localhost:3000
 
-![demo](https://github.com/frog1123/goldenageminecraft/blob/master/demo.png)
+![demo](https://github.com/frog1123/next-auth-test/blob/master/demo.png)
