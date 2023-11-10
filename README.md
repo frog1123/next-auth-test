@@ -7,7 +7,7 @@ nextjs website that handles users with next-auth library and prisma
 add env variables
 
 ```python
-#  .env
+# .env
 NEXTAUTH_SECRET=
 
 # mysql
